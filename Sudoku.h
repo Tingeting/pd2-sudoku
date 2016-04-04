@@ -28,8 +28,8 @@ class Sudoku {
 		int cube[81];
 		int map[9][9];
 		int ans;
-		void Solverec();
-		int compare(int,int,int);
+		void Solver();
+		int test(int,int,int);
 		int mapans[9][9];
 		bool first();
 };

@@ -726,7 +726,7 @@ int Sudoku::compare(int i,int j,int k){
 
 
 
-void Sudoku::Solverec(){
+void Sudoku::Solver(){
 
 	int i,j,k,zero=0;
 	for(i=0;i<9;i++){
@@ -757,7 +757,7 @@ void Sudoku::Solverec(){
 					if(compare(i,j,k)==1){
 
 						map[i][j]=k;
-						Solverec();
+						Solver();
 						map[i][j]=0;
 						if(ans>=2)
 							return;
@@ -839,11 +839,8 @@ for(j=0;j<9;j++){
 		
 	}
 
-
-
-	int a,b;
 	ans=0;
-	Solverec();
+	Solver();
 	if(ans==0){
 
 		printf("0\n");
@@ -851,19 +848,20 @@ for(j=0;j<9;j++){
 	
 	if(ans==1){
 
-		cout<<"1"<<endl;
-		for(a=0;a<9;a++){
+		printf("1\n");
+		for(i=0;i<9;i++){
 
-				for(b=0;b<9;b++){
+				for(j=0;j<9;j++){
 				
-					printf("%d",mapans[a][b]);
-					(b+1)%9==0?cout<<"\n":cout<<" ";
+					printf("%d",mapans[i][j]);
+					(j+1)%9==0?cout<<"\n":cout<<" ";
 				}
 		}
 	}
-	if(ans==2)
-			cout<<"2"<<endl;
-
+	if(ans==2){
+			
+		printf("2\n");
+	}
 }
 
 
