@@ -277,35 +277,14 @@ void Sudoku::rotate(int n){
 	
 	i=0;
 	
-	if(n==0){
-	
-		for(i=0;i<81;i++){
-		
-			cubeNew[i]=cube[i];
-		}
-	}
 	while(i<81){
 
 		cubeNew[i]=0;
 		i++;
 	}
 
-	if(n>0){
-	
-		for(i=0;i<9;i++){
-		
-			for(j=0;j<9;j++){
-		
-				cubeNew[(9*i+j)+((8-j-i)+9*(j-i))]=cube[9*i+j];
-			}//rotate 90 degree
-		}
-	}
-	while(i<81){
 
-		cube[i]=cubeNew[i];
-		i++;
-	}
-	if(n>1){
+	if(n==1){
 	
 		for(i=0;i<9;i++){
 		
@@ -315,28 +294,13 @@ void Sudoku::rotate(int n){
 			}//rotate 90 degree
 		}
 	}
-	while(i<81){
-
-		cube[i]=cubeNew[i];
-		i++;
-	}
-	if(n>2){
-	
-		for(i=0;i<9;i++){
-		
-			for(j=0;j<9;j++){
-		
-				cubeNew[(9*i+j)+((8-j-i)+9*(j-i))]=cube[9*i+j];
-			}//rotate 90 degree
-		}
-	}
-		/*else if(n==2){
+	else if(n==2){
 		
 		for(i=0;i<9;i++){
 		
 			for(j=0;j<9;j++){
 		
-				cubeNew[(9*i+j)+((8-j-i)+9*(8-j-i))]=cube[9*i+j];
+				cubeNew[(9*i+j)+((8-2*j)+9*(8-2*i))]=cube[9*i+j];
 			}//rotate 180 degree
 		}
 	}
@@ -357,7 +321,7 @@ void Sudoku::rotate(int n){
 			cubeNew[i]=cube[i];
 		}
 	}
-*/	
+	
 	i=0;
 
 	while(i<81){
