@@ -703,7 +703,7 @@ void Sudoku::solve(){
 */
  
 
-int Sudoku::compare(int i,int j,int k){
+int Sudoku::test(int i,int j,int k){
 
 	int l,m,n=(i/3)*3+3,o=(j/3)*3+3;
 	
@@ -754,7 +754,7 @@ void Sudoku::Solver(){
 
 				for(k=1;k<10;k++){
 
-					if(compare(i,j,k)==1){
+					if(test(i,j,k)==1){
 
 						map[i][j]=k;
 						Solver();
@@ -854,7 +854,7 @@ for(j=0;j<9;j++){
 				for(j=0;j<9;j++){
 				
 					printf("%d",mapans[i][j]);
-					(j+1)%9==0?cout<<"\n":cout<<" ";
+					(j+1)%9==0?printf("\n"):printf(" ");
 				}
 		}
 	}
