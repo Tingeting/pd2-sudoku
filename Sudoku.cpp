@@ -343,7 +343,7 @@ void Sudoku::flip(int n){
 	int i,j;
 	int cubeNew[81];
 
-	if(n==1){
+	if(n==0){
 
 		for(i=0;i<9;i++){
 			
